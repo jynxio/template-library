@@ -32,11 +32,15 @@ export default defineConfig( ( {
                 host: "localhost",
                 port: 8080,
                 open: true,
-                https: false,
+                /* 👋 modify this line 👇 */
+                https: true,
                 strictPort: false,
                 cors: true,
             },
-            plugins: [ basicSsl() ]
+            plugins: [
+                /* 👋 modify this line 👇 */
+                basicSsl(),
+            ],
         };
 
     }
