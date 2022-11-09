@@ -1,0 +1,27 @@
+{
+    "name": "file-name",
+    "type": "module",
+    "version": "0.1.0",
+    "license": "MIT",
+    "author": "jynxio",
+    "private": true,
+    "files": [
+        "build"
+    ],
+    "main": "./build/file-name.umd.cjs",
+    "module": "./build/file-name.js",
+    "exports": {
+        ".": {
+            "import": "./build/file-name.js",
+            "require": "./build/file-name.umd.cjs"
+        }
+    },
+    "scripts": {
+        "start": "vite serve",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-basic-ssl": "^0.1.2",
+        "vite": "^3.2.3"
+    }
+}
