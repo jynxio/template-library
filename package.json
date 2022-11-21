@@ -8,20 +8,16 @@
     "files": [
         "build"
     ],
-    "main": "./build/file-name.umd.cjs",
+    "main": "./build/file-name.iife.js",
     "module": "./build/file-name.js",
-    "exports": {
-        ".": {
-            "import": "./build/file-name.js",
-            "require": "./build/file-name.umd.cjs"
-        }
-    },
+    "exports": "./build/file-name.js",
+    "unpkg": "./build/file-name.iife.js",
+    "jsdelivr": "./build/file-name.iife.js",
     "scripts": {
         "start": "vite serve",
         "build": "vite build"
     },
     "devDependencies": {
-        "@vitejs/plugin-basic-ssl": "^0.1.2",
         "vite": "^3.2.3"
     }
 }
