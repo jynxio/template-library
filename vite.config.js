@@ -2,8 +2,6 @@ import { resolve } from "path";
 
 import { defineConfig } from "vite";
 
-import basicSsl from "@vitejs/plugin-basic-ssl";
-
 export default defineConfig( ( {
     command,
     mode,
@@ -32,15 +30,10 @@ export default defineConfig( ( {
                 host: "localhost",
                 port: 8080,
                 open: true,
-                /* 👋 modify this line 👇 */
-                https: true,
+                https: false,
                 strictPort: false,
                 cors: true,
             },
-            plugins: [
-                /* 👋 modify this line 👇 */
-                basicSsl(),
-            ],
         };
 
     }
@@ -60,22 +53,22 @@ export default defineConfig( ( {
                 sourcemap: false,
                 minify: "esbuild",
                 lib: {
-                    entry: resolve(__dirname, "library/index.js"),
+                    entry: resolve( __dirname, "library/index.js"),
                     /* 👋 modify this line 👇 */
                     name: "global-name",
-                    formats: [ "es", "umd" ],
+                    formats: [ "es", "iife" ],
                     /* 👋 modify this line 👇 */
                     fileName: "file-name",
                 },
                 rollupOptions: {
                     /* 👋 modify this line 👇 */
-                    external: [ "react", "vue", "three" ],
+                    external: [ "vue", "react", "three" ],
                     /* 👋 modify this dictionary 👇 */
                     output: {
                         globals: {
                             vue: "Vue",
                             react: "React",
-                            three: "three",
+                            three: "THREE",
                         },
                     },
                 },
